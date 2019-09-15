@@ -112,34 +112,34 @@ var doWhatItSays = function() {
     var dataArr = data.split(",");
 
     if (dataArr.length === 2) {
-      pick(dataArr[0], dataArr[1]);
+      selection(dataArr[0], dataArr[1]);
     } else if (dataArr.length === 1) {
-      pick(dataArr[0]);
+      selection(dataArr[0]);
     }
   });
 };
 
-var pick = function(caseData, functionData) {
-  switch (caseData) {
+var selection = function(selector, userInput) {
+  switch (selector) {
   case "concert-this":
-    concertThis(functionData);
+    concertThis(userInput);
     break;
   case "spotify-this-song":
-    spotifyThisSong(functionData);
+    spotifyThisSong(userInput);
     break;
   case "movie-this":
-    movieThis(functionData);
+    movieThis(userInput);
     break;
   case "do-what-it-says":
     doWhatItSays();
     break;
   default:
-    console.log("LIRI doesn't know that");
+    console.log("Please type in concert-this, movie-this or spotify-this-song");
   }
 };
 
-var runThis = function(argOne, argTwo) {
-  pick(argOne, argTwo);
+var runThis = function(commandOne, commandTwo) {
+  selection(commandOne, commandTwo);
 };
 
 // Initiation
